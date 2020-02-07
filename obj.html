@@ -1,0 +1,73 @@
+<html>
+<body>
+<script type="text/javascript">
+    function func() {
+        this.mem2 = 'mem2value';
+
+        this.memFunc = function () {
+            document.write('this.memFunc excute <br>');
+        };
+
+        this.mem3 = {
+            a1: 'a1111111',
+            a2: 'a211111111',
+            func1: function () {
+                document.write('this.mem3 func3 execture  <br>');
+            }
+        };
+
+        document.write('func excute <br>');
+
+    }
+
+    func.prototype.mem1 = null;
+    func.prototype.func1 = function () {
+        document.write('func1 execute <br>');
+    }
+    var v = new func();
+    v.mem1 = 'mem1';
+    document.write('v.mem1 :' + v.mem1 + '<br>');
+    document.write('v.mem2 :' + v.mem2 + '<br>');
+    v.func1();
+
+    v.memFunc();
+    document.write('v.mem3.a1:' + v.mem3.a1 + '<br>');
+    document.write('v.mem3.a2:' + v.mem3.a2 + '<br>');
+    v.mem3.func1();
+
+
+    var v1 = {
+        mem1: 'mem1343',
+    };
+    document.write('v1.mem1:' + v1.mem1 + '<br>');
+
+    var typeJSON = {
+        'product': ['key1', '1111'],
+        'packs': ['key2', '222222']
+
+    };
+
+    document.write('typeJSON.product:' + typeJSON.product + '<br>');
+    document.write('typeJSON.product:' + typeJSON.product[0] + '<br>');
+
+    var array = [1, 2, 3, 4, 5, 6, 7];
+
+    /*
+    array.forEach(v=>{
+        document.write(v);
+    });
+    */
+
+
+    array.forEach(function (v) {
+        document.write('array : ' + v + '<br>');
+    });
+
+    var str = "Visit RUnoob";
+    var patt1 = /runoob/i;
+    document.write(str.match(patt1));
+
+
+</script>
+</body>
+</html>
