@@ -1,0 +1,12 @@
+json, 
+所有json的解析，都是輸入參數是字符串， 用單引號擴起來
+然後把這個字符串传入一个包里的parse函数， 
+一般这个包是json名字。 
+var text = '{ "sites" : [' +
+	'{ "name":"Runoob" , "url":"www.runoob.com" },' +
+	'{ "name":"Google" , "url":"www.google.com" },' +
+	'{ "name":"Taobao" , "url":"www.taobao.com" } ]}';
+	
+obj = JSON.parse(text);
+所有的解析函数都是这个用法。 
+go , ja, java都是这样的用法
